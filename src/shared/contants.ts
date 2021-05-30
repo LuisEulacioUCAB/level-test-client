@@ -1,4 +1,5 @@
-export const ENDPOINT = process.env.ENDPOINT ?? 'http://localhost:8000';
+export const ENDPOINT =
+  process.env.REACT_APP_ENDPOINT ?? 'http://localhost:8000';
 export const FETCH_INTRODUCTION_ENDPOINT = `${ENDPOINT}/introduction/`;
 export const FETCH_USER_ENDPOINT = `${ENDPOINT}/user-info/`;
 export const FETCH_QUESTIONS_ENDPOINT = `${ENDPOINT}/question/`;
