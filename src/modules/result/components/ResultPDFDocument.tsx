@@ -19,7 +19,10 @@ type ResultPDFDocumentProps = {
 
 const styles = StyleSheet.create({
   page: {
-    padding: 35,
+    paddingTop: 10,
+    paddingBottom: 35,
+    paddingLeft: 35,
+    paddingRight: 35,
   },
   title: {
     color: '#d33b54',
@@ -49,10 +52,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 160,
-    height: 50,
-    marginHorizontal: 180,
-    marginTop: 5,
+    width: 100,
+    height: 100,
+    marginHorizontal: 210,
   },
   noAnswers: {
     fontSize: 12,
@@ -71,7 +73,7 @@ export const ResultPDFDocument: React.FC<ResultPDFDocumentProps> = ({
   data,
 }) => {
   const { PUBLIC_URL } = process.env;
-  const Logo = `${PUBLIC_URL}/descarga.png`;
+  const Logo = `${PUBLIC_URL}/new-logo.png`;
 
   return (
     <Document>
