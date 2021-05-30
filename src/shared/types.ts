@@ -49,4 +49,5 @@ export interface ResultType {
   question: string;
   type: string;
   isCorrect: boolean;
+  order: string;
 }

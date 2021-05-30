@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
   correct: {
     fontSize: 14,
     fontWeight: 600,
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     color: 'green',
   },
   incorrect: {
     fontSize: 14,
     fontWeight: 600,
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     color: 'red',
   },
 
@@ -86,7 +86,7 @@ export const ResultPDFDocument: React.FC<ResultPDFDocumentProps> = ({
 
           return (
             <View>
-              <Text style={styles.question}>{message}</Text>
+              <Text style={styles.question}>{`${x.order}.- ${message}`}</Text>
               <Text style={x.isCorrect ? styles.correct : styles.incorrect}>
                 R: {x.response.label}
               </Text>
