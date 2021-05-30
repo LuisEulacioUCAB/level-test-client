@@ -16,4 +16,4 @@ export const CHECKBOX_QUESTION = 'checkbox';
 export const CHECKBOX_INPUT_QUESTION = 'checkbox-input';
 export const CHECKBOX_MULTIPLES_INPUT_QUESTION = 'checkbox-multiples-input';
 
-export const EACH_FINISH_STEP = process.env.EACH_FINISH_STEP ?? '2';
+export const EACH_FINISH_STEP = process.env.REACT_APP_EACH_FINISH_STEP ?? '2';

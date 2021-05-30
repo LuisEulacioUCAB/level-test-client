@@ -15,7 +15,6 @@ import {
   CHECKBOX_INPUT_QUESTION,
   CHECKBOX_MULTIPLES_INPUT_QUESTION,
   CHECKBOX_QUESTION,
-  EACH_FINISH_STEP,
 } from '../../shared/contants';
 import { QuestionCheckboxView } from './components/QuestionCheckboxView';
 import { AnswerType } from '../../shared/types';
@@ -73,8 +72,8 @@ export const QuestionsView: React.FC = () => {
 
   useEffect(() => {
     if (questions && questions.length && activeQuestion > 0) {
-      const result = (activeQuestion + 1) % parseInt(EACH_FINISH_STEP);
-      setShowFinishTest(!!result);
+      const result = [10, 20, 30, 40, 50, 60].includes(activeQuestion);
+      setShowFinishTest(result);
     }
   }, [activeQuestion, questions]);
 

@@ -64,15 +64,15 @@ export const sanitizeQuestionMultipleInputs = (
 
 export const progressMessage = (step: number): string => {
   switch (step) {
-  case 4:
-    return 'Vamos paso a paso. Muy bien';
-  case 6:
-    return 'Buen trabajo. Adelante';
-  case 8:
-    return 'Eres casi un experto';
   case 10:
+    return 'Vamos paso a paso. Muy bien';
+  case 20:
+    return 'Buen trabajo. Adelante';
+  case 30:
+    return 'Eres casi un experto';
+  case 40:
     return 'Casi llegas a la meta';
-  case 12:
+  case 50:
     return 'Eres el mejor';
   default:
     return 'Un buen comienzo. Sigue así';
@@ -81,17 +81,17 @@ export const progressMessage = (step: number): string => {
 
 export const finishTestMessage = (step: number): string => {
   switch (step) {
-  case 2:
-    return '¿Quieres continuar?. \nLas preguntas aumentarán su grado de dificultad. Puedes terminar aquí o seguir adelante hasta completar tu prueba';
-  case 4:
-    return '¿Sigues en la carrera?';
-  case 6:
-    return '¿Quieres alcanzar la meta?';
-  case 8:
-    return '¿se está poniendo difícil?';
   case 10:
+    return '¿Quieres continuar?. \nLas preguntas aumentarán su grado de dificultad. Puedes terminar aquí o seguir adelante hasta completar tu prueba';
+  case 20:
+    return '¿Sigues en la carrera?';
+  case 30:
+    return '¿Quieres alcanzar la meta?';
+  case 40:
+    return '¿se está poniendo difícil?';
+  case 50:
     return 'Avanzas muy rápido ¿continuamos?';
-  case 12:
+  case 60:
     return '¡Lo lograste! GOTALKTO agradece tu esfuerzo';
   default:
     return '';

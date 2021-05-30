@@ -1,5 +1,5 @@
 export const getLevel = (answers: number): string => {
-  if (answers >= 1 && answers <= 10) {
+  if (answers >= 0 && answers <= 10) {
     return 'Nivel A1 Beginner';
   }
   if (answers >= 11 && answers <= 20) {
