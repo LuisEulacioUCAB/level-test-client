@@ -36,7 +36,7 @@ export const IntroductionView: React.FC<IntroductionViewProps> = () => {
   const [introduction, setIntroduction] = useState<IntroductionType | null>(
     null,
   );
-  const [email, setEmail] = useState<string>('luiseulacio1255@gmail.com');
+  const [email, setEmail] = useState<string>('');
   const classes = useStyles();
   const { loading, init } = useUserProviderHook();
 
