@@ -91,10 +91,10 @@ export const updateLevelTestResponse = createAction(
 export const finishLevelTest = createAction(
   finishLevelTestEvent,
   finishLevelTestErrorEvent,
-  async (levelTestId: number) => {
+  async (levelTestId: number, email: string) => {
     const response = await fetch(`${FINISH_LEVEL_TEST_RESPONSE_ENDPOINT}`, {
       method: 'POST',
-      body: JSON.stringify({ id: levelTestId }),
+      body: JSON.stringify({ id: levelTestId, email }),
       headers: { 'Content-Type': 'application/json' },
     });
 

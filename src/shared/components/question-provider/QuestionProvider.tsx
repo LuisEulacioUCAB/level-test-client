@@ -39,6 +39,7 @@ export const QuestionProvider: React.FC<QuestionProviderProps> = ({
     questions,
     lastLevelTestResponse,
     finishTest,
+    currentUser,
   } = useUserProviderHook();
   const [activeQuestion, setActiveQuestion] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<AnswerType | null>(null);
@@ -212,8 +213,8 @@ export const QuestionProvider: React.FC<QuestionProviderProps> = ({
 
   const onFinishLevelTest = (): void => {
     setLoadingNext(true);
-    if (levelTest && levelTest?.id) {
-      finishLevelTest(levelTest?.id);
+    if (levelTest && levelTest?.id && currentUser && currentUser?.email) {
+      finishLevelTest(levelTest?.id, currentUser?.email);
     }
   };
 
