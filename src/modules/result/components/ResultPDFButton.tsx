@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import { useSubscription } from '@cobuildlab/react-simple-state';
+import { makeStyles } from '@material-ui/core/styles';
 import { ButtonDefault } from '../../../shared/components/buttons/buttons';
 import { ResultPDFDocument } from './ResultPDFDocument';
 import { useUserProviderHook } from '../../../shared/components/user-provider/useUserProviderHook';
@@ -13,10 +14,18 @@ import { levelTestPDFResultEvent } from '../result-events';
  * @type {ResultType} type.
  */
 
+const useStyles = makeStyles({
+  buttons: {
+    fontSize: 13,
+    padding: '9px 17px',
+  },
+});
+
 export const ResultPDFButton: React.FC = () => {
   const { currentUser, levelTest } = useUserProviderHook();
   const [results, setResults] = useState<ResultType[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const classes = useStyles();
 
   useEffect(() => {
     if (levelTest?.id && currentUser && currentUser?.id) {
@@ -32,8 +41,6 @@ export const ResultPDFButton: React.FC = () => {
     }
   });
 
-  console.log('results', results);
-
   return (
     <PDFDownloadLink
       style={{
@@ -44,7 +51,8 @@ export const ResultPDFButton: React.FC = () => {
         variant="contained"
         color="primary"
         isLoading={loading}
-        startIcon={<PictureAsPdfIcon />}>
+        startIcon={<PictureAsPdfIcon />}
+        className={classes.buttons}>
         DESCARGAR
       </ButtonDefault>
     </PDFDownloadLink>

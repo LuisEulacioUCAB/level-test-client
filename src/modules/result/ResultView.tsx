@@ -33,6 +33,10 @@ const useStyles = makeStyles({
     padding: 15,
     marginBottom: 15,
   },
+  buttons: {
+    fontSize: 13,
+    padding: '9px 17px',
+  },
 });
 
 export const ResultView: React.FC = () => {
@@ -121,7 +125,8 @@ export const ResultView: React.FC = () => {
                   color="primary"
                   isLoading={loadingResend}
                   onClick={onResendEmail}
-                  startIcon={<MailOutlineOutlinedIcon />}>
+                  startIcon={<MailOutlineOutlinedIcon />}
+                  className={classes.buttons}>
                   ENVIAR RESULTADOS
                 </ButtonDefault>
                 <ButtonDefault
@@ -131,7 +136,8 @@ export const ResultView: React.FC = () => {
                   onClick={() => {
                     setLoadingRepeat(true);
                     onRepeat();
-                  }}>
+                  }}
+                  className={classes.buttons}>
                   REPETIR EXAMEN
                 </ButtonDefault>
               </Box>
