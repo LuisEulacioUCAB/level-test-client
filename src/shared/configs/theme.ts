@@ -11,4 +11,12 @@ export const theme = createMuiTheme({
       contrastText: PRIMARY_MAIN_COLOR,
     },
   },
+  overrides: {
+    MuiButton: {
+      containedSizeLarge: {
+        fontSize: 13,
+        padding: '9px 17px',
+      },
+    },
+  },
 });
