@@ -213,8 +213,8 @@ export const QuestionProvider: React.FC<QuestionProviderProps> = ({
 
   const onFinishLevelTest = (): void => {
     setLoadingNext(true);
-    if (levelTest && levelTest?.id && currentUser && currentUser?.email) {
-      finishLevelTest(levelTest?.id, currentUser?.email);
+    if (levelTest && levelTest?.id && currentUser && currentUser?.id) {
+      finishLevelTest(levelTest?.id, currentUser?.id);
     }
   };
 

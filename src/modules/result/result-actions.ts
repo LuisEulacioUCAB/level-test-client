@@ -87,10 +87,10 @@ export const fetchLevelTestPDFResults = createAction(
 export const levelTestResendResultEmail = createAction(
   levelTestResendResultEmailEvent,
   levelTestResendResultEmailErrorEvent,
-  async (id: number, email: string) => {
+  async (id: number, userId: number) => {
     const response = await fetch(`${LEVEL_TEST_RESEND_RESULT_ENDPOINT}`, {
       method: 'POST',
-      body: JSON.stringify({ email, id }),
+      body: JSON.stringify({ userId, id }),
       headers: { 'Content-Type': 'application/json' },
     });
 

@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useSubscription } from '@cobuildlab/react-simple-state';
 import ReplayIcon from '@material-ui/icons/Replay';
 import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import {
   ButtonDefault,
   Loading,
@@ -20,7 +21,6 @@ import {
   levelTestResendResultEmail,
 } from './result-actions';
 import { Loader } from '../../shared/components/Loader';
-import { ResultPDFButton } from './components/ResultPDFButton';
 import { getLevel } from './result-utils';
 
 const useStyles = makeStyles({
@@ -78,7 +78,7 @@ export const ResultView: React.FC = () => {
       setLoadingResend(true);
       levelTestResendResultEmail(
         levelTest?.id as number,
-        currentUser?.email as string,
+        currentUser?.id as number,
       );
     }
   };
@@ -119,7 +119,16 @@ export const ResultView: React.FC = () => {
             </Grid>
             <Grid xs={12} item>
               <Box display="flex" justifyContent="space-between">
-                <ResultPDFButton />
+                <ButtonDefault
+                  variant="contained"
+                  color="primary"
+                  startIcon={<PictureAsPdfIcon />}
+                  onClick={() => {
+                    window.location.href = `http://localhost:8000/pdf?user_id=${currentUser?.id}&level_test_id=${levelTest?.id}`;
+                  }}
+                  className={classes.buttons}>
+                  DESCARGAR
+                </ButtonDefault>
                 <ButtonDefault
                   variant="outlined"
                   color="primary"
