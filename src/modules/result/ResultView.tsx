@@ -22,6 +22,7 @@ import {
 } from './result-actions';
 import { Loader } from '../../shared/components/Loader';
 import { getLevel } from './result-utils';
+import { ENDPOINT } from '../../shared/contants';
 
 const useStyles = makeStyles({
   paper: {
@@ -124,7 +125,7 @@ export const ResultView: React.FC = () => {
                   color="primary"
                   startIcon={<PictureAsPdfIcon />}
                   onClick={() => {
-                    window.location.href = `http://localhost:8000/pdf?user_id=${currentUser?.id}&level_test_id=${levelTest?.id}`;
+                    window.location.href = `${ENDPOINT}/pdf?user_id=${currentUser?.id}&level_test_id=${levelTest?.id}`;
                   }}
                   className={classes.buttons}>
                   DESCARGAR

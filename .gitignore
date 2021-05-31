@@ -25,5 +25,5 @@ yarn-error.log*
 .idea
 .env
 
-/scripts
+scripts
 /.idea
